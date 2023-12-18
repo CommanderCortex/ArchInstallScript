@@ -8,6 +8,7 @@ echo $uuid1
 
 arch-chroot /mnt pacman -S efibootmgr --noconfirm
 arch-chroot /mnt efibootmgr --disk /dev/sda --part 1 --create --label "Linux Kernel" --loader /vmlinuz-linux --verbose \ --unicode 'root=PARTUUID=$uuid1 rw initrd=\initramfs-linux.img' 
-
-echo "Reboot now with 'reboot'"
+echo "Efi Boot Manager Enabled via EFI File for Hyper-V will poweroff in 3s! Just start the VM normally after poweroff"
+sleep 3
+poweroff
 
