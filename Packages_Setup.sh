@@ -2,6 +2,7 @@
 #
 
 echo "Installing Arch Linux!"
+sleep 2
 
 pacstrap -K /mnt base linux linux-firmware grub vim networkmanager iwd neofetch 
 
