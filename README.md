@@ -3,7 +3,7 @@ this is useful if you want an easy way to setup wifi with the Wifi.sh script and
 
 Super Simple Arch Linux install instructions.
 
-If you're connected over Wifi then please setup your network using the following Guide: Note i will be using wlan0 here as it's the most common interface, change if needed for your system.
+If you're connecting over Wifi then please setup your network using the following Guide: Note i will be using wlan0 here as it's the most common interface, change if needed for your system.
 1. type 'ip link' to show your network devices.
 2. type 'ip link <Device> set up | Replace <Device> with the name of your network device Such as wlan0, DO NOT use 'lo' as this is our loopback device.
 3. type 'iwctl' followed by 'device list' when you see the iwd# prompt.
