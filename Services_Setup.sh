@@ -5,7 +5,7 @@
 echo -e "\nEnabling essential services"
 
 arch-chroot /mnt systemctl enable NetworkManager.service #Example: Enables our Network Manager on boot.
-arch-chroot /mnt systemctl enable bluetooth
+echo "Network Manager enabled!"
 arch-chroot /mnt systemctl enable iwd 
-
+echo "Iwd Enabled!"
 #Add any services here that you install to start on boot
