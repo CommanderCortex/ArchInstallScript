@@ -44,3 +44,10 @@ Arch will be fully setup in a black state with a simple GUI.
 
 If you're setting this up in Hyper-V for testing purposes or you want to edit the script file for your computer, Hyper-V is a useful place to test things. Onec you've finished the ./Setup.sh script boot back into the Arch installer,
 & from here use these commands 'mount /dev/sda3 /mnt' then 'mount /dev/sda1 /mnt/boot/efi' then run the Hyper-V script in the Utils folder. This will setup the bootloader for Hyper-V to be able to boot.
+
+Updating & Installing Packages:
+1. To update the system use 'sudo pacman -Syu' and or 'sudo pacman -Syyu'
+2. To install a packages use 'sudo pacman -S (Package Name)' | e.g. 'sudo pacman -S firefox'
+3. To find packages use the offical Repo found here: https://archlinux.org/packages/
+4. For Community based Packages use paru found here: https://github.com/Morganamilo/paru
+5. To use the yay Package manager use paru to install from here: https://aur.archlinux.org/packages/yay
