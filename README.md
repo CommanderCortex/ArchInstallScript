@@ -34,7 +34,7 @@ For use as a server & or no gui & or you want your own desktop environment, dele
 Then run the ./Setup.sh Script
 
 Once the computer reboots, press ctrl+alt+f4, login with the root user & password we set. Then type cd .., followed by vim /etc/sudoers. Then go-to line 108 by using 'shit+:' typing '108' then pressing enter
-Once there delete the # before %wheel.
+Once there delete the # before %wheel. Exit with 'qa!' not 'qa' like mentioned before. (qa! allows us to edit read only files)
 
 Then type reboot again. 
 Arch will be fully setup in a black state with a simple GUI
