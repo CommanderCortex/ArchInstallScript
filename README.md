@@ -1,3 +1,5 @@
+Super Simple Arch Linux install instructions
+
 If you're connected over Wifi then please setup your network using the following Guide: Note i will be using wlan0 here as it's the most common interface, change if needed for your system.
 1. type 'ip link' to show your network devices
 2. type 'ip link <Device> set up | Replace <Device> with the name of your network device Such as wlan0, DO NOT use 'lo' as this is our loopback device
