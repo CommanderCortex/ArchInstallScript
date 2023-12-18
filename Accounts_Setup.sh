@@ -19,4 +19,4 @@ arch-chroot /mnt sed -i 's/^%wheel ALL=(ALL) NOPASSWD: ALL/# %wheel ALL=(ALL) NO
 # Add sudo rights
 arch-chroot /mnt sed -i 's/^# %wheel ALL=(ALL) ALL/%wheel ALL=(ALL) ALL/' /etc/sudoers
 
-reboot
+./DesktopEnvironment_Setup.sh
