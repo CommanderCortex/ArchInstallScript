@@ -13,7 +13,9 @@ Now follow the same as below:
 
 If you're connected over Ethernet use the Following:
 
+Test our internet connection:
 'ping archlinux.org' - Tip: use ctrl + c, to halt any running Command or Script.
+if you get host name not resolved, then you're not connnect to the internet follow step one and two of the wifi setup if you're using ethernet to make sure your ethernet adapter is setup, if you're using wifi go back and restart, you did something wrong and or didn't read what i've written down.
 
 To get the scripts running on our Live Arch ISO follow these commands:
 'pacman -Sy git'
