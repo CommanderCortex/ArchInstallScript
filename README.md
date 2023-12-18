@@ -23,9 +23,15 @@ To get the scripts running on our Live Arch ISO follow these commands:
 'cd archscripts'
 'chmod +x *.sh'
 
+Tip: Vim;
+Vim is a terminal based text editor, to open a file type 'vim <textfile>' | you can also create a file with vim using the same command
+Once in vim the use the 'i' key to enter input mode. to exit press 'esc' then 'shit + :' the type 'wq' to save and exit, Note: 'w' refers to write & 'q' refers to quit.
+
+You can edit the scripts to follow your own preferances. I've added a bunch of Comments (#) that should help explain what each line is doing.
+
 Then run the scripts in the following Order
 1. Disks_Setup
 2. Packages_Setup
 3. Grub_Setup
-4. Services_Setup
+4. Services_Setup - Use a text editor such as vim to add any services and or packages you install. 
 5. Accounts_Setup
