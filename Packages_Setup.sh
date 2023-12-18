@@ -14,3 +14,4 @@ echo "Building our Initial RamDisk:"
 sleep 2
 arch-chroot /mnt mkinitcpio -P 
 
+./Grub_Setup.sh
