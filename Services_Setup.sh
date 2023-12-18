@@ -10,3 +10,5 @@ arch-chroot /mnt systemctl enable iwd
 echo "Iwd Enabled!"
 arch-chroot /mnt systemctl enable sddm 
 #Add any services here that you install to start on boot
+
+reboot
