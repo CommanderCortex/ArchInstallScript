@@ -27,7 +27,7 @@ To get the scripts running on our Live Arch ISO follow these commands:
 'chmod +x *.sh'
 
 Tip: Vim;
-Vim is a terminal based text editor, to open a text file use 'vim <NameOfTextFile>' | you can also create a file with vim using the same command.
+Vim is a terminal based text editor, to open a text file use 'vim NameOfTextFile' | you can also create a file with vim using the same command.
 Once in vim the use the 'i' key to enter input mode. to exit press 'esc' then 'shit + :' the type 'wq' to save and exit, Note: 'w' refers to write & 'q' refers to quit.
 
 You can edit the scripts to follow your own preferances. I've added a bunch of Comments (#) that should help explain what each line is doing.
