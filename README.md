@@ -22,7 +22,7 @@ if you get host name not resolved, then you're not connnect to the internet foll
 
 To get the scripts running on our Live Arch ISO follow these commands:
 'pacman -Sy git'
-'git clone https://github.com/CommanderCortex/archscripts'
+'git clone https://github.com/CommanderCortex/ArchInstallScript'
 'cd archscripts'
 'chmod +x *.sh'
 
