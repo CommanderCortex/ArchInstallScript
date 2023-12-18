@@ -29,4 +29,12 @@ Once in vim the use the 'i' key to enter input mode. to exit press 'esc' then 's
 
 You can edit the scripts to follow your own preferances. I've added a bunch of Comments (#) that should help explain what each line is doing.
 
+For use as a server & or no gui & or you want your own desktop environment, delete the Edit the Desktop environment Script to fit your needs.
+
 Then run the ./Setup.sh Script
+
+Once the computer reboots, press ctrl+alt+f4, login with the root user & password we set. Then type cd .., followed by vim /etc/sudoers. Then go-to line 108 by using 'shit+:' typing '108' then pressing enter
+Once there delete the # before %wheel.
+
+Then type reboot again. 
+Arch will be fully setup in a black state with a simple GUI
