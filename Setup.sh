@@ -155,7 +155,6 @@ read nameofmachine
 $nameofmachine > /etc/hostname
 
 #Sets our timezone
-timedatectl list-timezones
 echo "Select your timezone e.g; Pacific/Auckland"
 read TIMEZONE
 timedatectl --no-ask-password set-timezone $TIMEZONE
