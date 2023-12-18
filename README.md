@@ -1,3 +1,6 @@
+You can also download the ISO File under releases, and attatch it to a VM or flash it to a second USB drive to copy the files over to your live ArchISO, 
+this is useful if you want an easy way to setup wifi with the Wifi.sh script and then just run the Setup.sh script; Otherwise Follow the steps below
+
 Super Simple Arch Linux install instructions
 
 If you're connected over Wifi then please setup your network using the following Guide: Note i will be using wlan0 here as it's the most common interface, change if needed for your system.
@@ -38,3 +41,6 @@ Once there delete the # before %wheel. Exit with 'qa!' not 'qa' like mentioned b
 
 Then type reboot again. 
 Arch will be fully setup in a black state with a simple GUI
+
+If you're setting this up in Hyper-V for testing purposes or you want to edit the script file for your computer, Hyper-V is a useful place to test things. Onec you've finished the ./Setup.sh script boot back into the Arch installer,
+& from here use these commands 'mount /dev/sda3 /mnt' then 'mount /dev/sda1 /mnt/boot/efi' then run the Hyper-V script in the Utils folder. This will setup the bootloader for Hyper-V to be able to boot
