@@ -29,10 +29,4 @@ Once in vim the use the 'i' key to enter input mode. to exit press 'esc' then 's
 
 You can edit the scripts to follow your own preferances. I've added a bunch of Comments (#) that should help explain what each line is doing.
 
-Then run the scripts in the following Order
-1. Disks_Setup
-2. Packages_Setup
-3. Grub_Setup
-4. Services_Setup - Use a text editor such as vim to add any services and or packages you install. 
-5. Accounts_Setup
-6. DesktopEnvironment_Setup
+Then run the ./Setup.sh Script
