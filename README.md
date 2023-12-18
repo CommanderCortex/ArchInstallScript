@@ -23,8 +23,8 @@ if you get host name not resolved, then you're not connnect to the internet foll
 To get the scripts running on our Live Arch ISO follow these commands:
 'pacman -Sy git'
 'git clone https://github.com/CommanderCortex/ArchInstallScript'
-'cd archscripts'
-'chmod +x *.sh'
+'cd ArchInstallScript'
+'chmod +x *.sh' | Note this allows us to run scripts, chmod +x scriptname.sh
 
 Tip: Vim;
 Vim is a terminal based text editor, to open a text file use 'vim NameOfTextFile' | you can also create a file with vim using the same command.
