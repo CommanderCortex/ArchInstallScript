@@ -6,7 +6,9 @@ read DEVICE
 blkid $DEVICE
 echo "Type our PARTUUID here:"
 read UUID
-efibootmgr --disk /dev/sda --part 1 --create --label "Linux Kernel" --loader /vmlinuz-linux --verbose \ --unicode 'root=PARTUUID=$UUID rw initrd=\initramfs-linux.img' 
+
+arch-chroot /mnt pacman -S efibootmgr --noconfirm
+arch-chroot /mnt efibootmgr --disk /dev/sda --part 1 --create --label "Linux Kernel" --loader /vmlinuz-linux --verbose \ --unicode 'root=PARTUUID=$UUID rw initrd=\initramfs-linux.img' 
 
 echo "Reboot now with 'reboot'"
 
