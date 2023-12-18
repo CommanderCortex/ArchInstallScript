@@ -1,4 +1,4 @@
-#!bin/bash
+#!/bin/sh
 
 #Starts our setup for the Systems Root Password And a local user account.
 echo "Starting setup of Root Password & Local User Account"
