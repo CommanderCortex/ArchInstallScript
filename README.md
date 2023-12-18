@@ -10,7 +10,7 @@ If you're connected over Wifi then please setup your network using the following
 4. type 'device wlan0 set-property Powered on' | still inside our iwd# prompt
 5. type 'adapter phy0 set-property Powered on' | NOTE: Change phy0 to match your adapter name
 6. type 'station wlan0 scan && station device get-networks && exit'
-7. Now back in our shell type: 'iwctl --passphrase <Network Password> station wlan0 connect <Network Name> | Replace <> with your network Information
+7. Now back in our shell type: 'iwctl --passphrase <Network_Password> station wlan0 connect <Network_Name> | Replace <> with your network Information
 
 Now follow the same as below:
 
