@@ -38,3 +38,5 @@ mount --mkdir /dev/$X $BOOTDIRECTORY
 
 echo "Disk Setup Complete!"
 sleep 3
+
+./Packages_Setup.sh
