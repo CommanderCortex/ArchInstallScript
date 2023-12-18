@@ -2,6 +2,6 @@
 
 #Run this script after installing everything and booting into Arch
 
-sudo pacman -Syu
-sudo pacman -S alacritty sddm wayland plasma-desktop
-sudo systemctl enable sddm --now 
+arch-chroot /mnt pacman -Syu
+arch-chroot /mnt pacman -S alacritty sddm wayland plasma-desktop
+arch-chroot /mnt systemctl enable sddm 
