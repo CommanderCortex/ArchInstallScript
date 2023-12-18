@@ -40,7 +40,7 @@ Once the computer reboots, press ctrl+alt+f4, login with the root user & passwor
 Once there delete the # before %wheel. Exit with 'qa!' not 'qa' like mentioned before. (qa! allows us to edit read only files)
 
 Then type reboot again. 
-Arch will be fully setup in a black state with a simple GUI.
+Arch will be fully setup in a blank state with a simple GUI.
 
 If you're setting this up in Hyper-V for testing purposes or you want to edit the script file for your computer, Hyper-V is a useful place to test things. Onec you've finished the ./Setup.sh script boot back into the Arch installer,
 & from here use these commands 'mount /dev/sda3 /mnt' then 'mount /dev/sda1 /mnt/boot/efi' then run the Hyper-V script in the Utils folder. This will setup the bootloader for Hyper-V to be able to boot.
