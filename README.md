@@ -35,3 +35,4 @@ Then run the scripts in the following Order
 3. Grub_Setup
 4. Services_Setup - Use a text editor such as vim to add any services and or packages you install. 
 5. Accounts_Setup
+6. DesktopEnvironment_Setup
