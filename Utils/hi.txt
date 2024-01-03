@@ -1,1 +1,3 @@
 https://github.com/prasanthrangan/hyprdots/blob/main/README.md#Installation
+
+makepkg -s --skippgpcheck
