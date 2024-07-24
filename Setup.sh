@@ -142,7 +142,6 @@ arch-chroot /mnt systemctl enable NetworkManager.service #Example: Enables our N
 echo "Network Manager enabled!"
 arch-chroot /mnt systemctl enable iwd
 echo "Iwd Enabled!"
-arch-chroot /mnt systemctl enable sddm
 cat <<EOF > /etc/sddm.conf
 [Theme]
 Current=Nordic
