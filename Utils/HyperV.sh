@@ -1,5 +1,10 @@
 #!/bin/bash
 
+echo "ONLY USE THIS IF YOU'RE INSTALLING ARCH ON A Hyper-V Machine"
+echo "PRESS Control C to cancel"
+
+wait 3
+
 echo "Setup an EFI File for Booting in Hyper-V"
 lsblk
 echo "Enter our root partition here - e.g. </dev/sda3> | use our /mnt Partition will either be /dev/sda3 or /dev/nvme0n1p3"
