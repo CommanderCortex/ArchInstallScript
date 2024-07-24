@@ -47,4 +47,3 @@ Updating & Installing Packages:
 2. To install a packages use 'sudo pacman -S (Package Name)' | e.g. 'sudo pacman -S firefox'
 3. To find packages use the offical Repo found here: https://archlinux.org/packages/
 4. For Community based Packages use paru found here: https://github.com/Morganamilo/paru
-5. To use the yay Package manager use paru to install from here: https://aur.archlinux.org/packages/yay
