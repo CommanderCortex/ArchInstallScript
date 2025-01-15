@@ -4,6 +4,11 @@ echo "Welcome to CommanderCortex's Script for installing Arch Linux"
 wait 2
 echo "Getting Devices:"
 lsblk #Runs the List Block Command (Block here just refers to all Storage devices, Each storage device is setup in memory as a Block)
+# This command will often create an output that displays the connected "Storage Devices":
+# hda, sda or nvme0n1    
+# HDA is a referance to HARD DRIVE 'A'
+# SDA is a referance to SATA DRIVE 'A'
+# NVME0N1 is a Referance to Non-Volitile-Memory-Express Drive '0' North bridge slot '1' --- North bridge is just a location on the Motherboard
 echo "Part 1 - Disk Setup!"
 sleep 3
 echo "Select your desired Device: (Most modern laptops and computers will either be 'sda' or 'nvme0n1/n2')"
@@ -34,6 +39,7 @@ echo "Starting mount process for installation to work"
 
 mount /dev/$Z /mnt #Allows us to mount our root (Home) Partition (/mnt) to the device labeled /dev/sda3 & or /dev/nvme0n1p3
 #This creates a link called /mnt (Path to our link) that Linux can use to store files there
+#Basicly where identifing the Street as Sata Drive 'a' & the house on the Street '3' as a partion on the Drive then giving it an Address at '/mnt' (Short for Mount)
 echo "Mounted 'mnt' Partition! [OKAY]"
 echo "Select Boot Directory: | Type '/mnt/boot/efi'"
 read BOOTDIRECTORY #Select where our Efi (Boot) Files will be located, By Default all UEFI BIOS systems will look for those files under /boot/efi
