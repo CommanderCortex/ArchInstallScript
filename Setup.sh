@@ -3,11 +3,11 @@
 echo "Welcome to CommanderCortex's Script for installing Arch Linux"
 wait 2
 echo "Getting Devices:"
-lsblk #Runs our List Block Command (Block here just refers to all Storage devices connect to our Device)
+lsblk #Runs the List Block Command (Block here just refers to all Storage devices, Each storage device is setup in memory as a Block)
 echo "Part 1 - Disk Setup!"
 sleep 3
 echo "Select your desired Device: (Most modern laptops and computers will either be 'sda' or 'nvme0n1/n2')"
-read DEVICE_ID #Gets the desired storage device we want to use for our Arch install.
+read DEVICE_ID #Gets the desired storage from the users input using the Read command then stores that text in the $Device_ID Variable.
 echo "$DEVICE_ID will be used for setup"
 echo "READ ME: Please Create 3 Partitions, Partition  1 Size=300M, Partition 2 Size=RAM Size, Partition  3 Size=Rest of Disk, Then Write the changes & quit"
 #It is important to use the above format for creating the optimal Partition Table for Linux
@@ -15,28 +15,31 @@ echo "Executing cfdisk in 5s"
 sleep 5
 cfdisk /dev/$DEVICE_ID #Opens cfdisk and targets our storage device that we set before
 X=$DEVICE_ID
-X+='1' #These 2 line adds a 1 to our device name, e.g sda + 1; so /dev/sda1 > this just points to the device labeled sda and the 1 is our partition number.
+X+='1' #These 2 lines adds a 1 to our device name, e.g sda + 1; so /dev/sda1 > this just points to the device labeled sda and the 1 is our partition number.
 mkfs.fat -F 32 /dev/$X #Formats our 1st partition in the Fat32 Format so our BIOS/UEFI can read our bootloader files.
 echo "Fat32 Partition setup for boot on Device: $X"
 Y=$DEVICE_ID
-Y+='2' #These 2 line adds a 2 to our device name, e.g sda + 2; so /dev/sda2 > this just points to the device labeled sda and the 2 is our partition number.
+Y+='2' #These 2 lines adds a 2 to our device name, e.g sda + 2; so /dev/sda2 > this just points to the device labeled sda and the 2 is our partition number.
 mkswap /dev/$Y #Creates a Swap Partition on our Device;
 swapon /dev/$Y #Turns our Swap Partition on, to verify; run 'lsblk' we should now see [SWAP] next to our Devices Second Partition
 echo "Swap Partition Enabled! on $Y"
 Z=$DEVICE_ID
-Z+='3' #These 2 line adds a 3 to our device name, e.g sda + 3; so /dev/sda3 > this just points to the device labeled sda and the 3 is our partition number.
+Z+='3' #These 2 lines adds a 3 to our device name, e.g sda + 3; so /dev/sda3 > this just points to the device labeled sda and the 3 is our partition number.
 echo "Select Filesystem type: | Type 'ext4' if unsure"
-read FILETYPE #Gets the filesytem the user wants to use for their root partition
+read FILETYPE #Gets the filesytem the user wants to use for their root (Home) partition
 mkfs.$FILETYPE /dev/$Z #Creates the desired filesystem
 echo "/mnt Partition setup completed [OKAY]"
 
 echo "Starting mount process for installation to work"
 
-mount /dev/$Z /mnt #Allows us to mount our root Partition (/mnt) to the device labeled /dev/sda3 & or /dev/nvme0n1p3
+mount /dev/$Z /mnt #Allows us to mount our root (Home) Partition (/mnt) to the device labeled /dev/sda3 & or /dev/nvme0n1p3
+#This creates a link called /mnt (Path to our link) that Linux can use to store files there
 echo "Mounted 'mnt' Partition! [OKAY]"
 echo "Select Boot Directory: | Type '/mnt/boot/efi'"
-read BOOTDIRECTORY #Select where our boot / efi Files will be located, By Default all UEFI BIOS systems will require it to be under /boot/efi
+read BOOTDIRECTORY #Select where our Efi (Boot) Files will be located, By Default all UEFI BIOS systems will look for those files under /boot/efi
 mount --mkdir /dev/$X $BOOTDIRECTORY #Creates a Directory & Mounts it where we set it before, e.g: /dev/sda1 & or /dev/nvme0n1p1 >> /mnt/boot/efi
+
+# The above simply mounts our SSD / HDD with a link (Path to boot files) "/boot/efi" that our BIOS can see
 
 echo "Disk Setup Complete!"
 sleep 1
@@ -44,14 +47,22 @@ sleep 1
 echo "Part 2 - Installing Arch Linux!"
 sleep 3
 
-#Installs the Linux Kernel, Base (Includes things like Pacman, this is our package manager), Firmware to interact with our Hardware
-pacstrap -K /mnt base base-devel linux linux-firmware vim nano sudo archlinux-keyring wget libnewt --noconfirm --needed
+#Installs the Linux Kernel, Base (Includes things like Pacman, Pacman is a package manager similar to the App Store - Just a Linux variation on it) 
+#& Finally our Firmware files that allow the (OS) Operating System to interact with our Hardware throught the BIOS
+pacstrap -K /mnt base base-devel linux linux-firmware vim nano sudo archlinux-keyring wget libnewt --noconfirm --needed # '--' is just a flag and allows these to install.
+#Without asking the user for confirmation
+
 cp /etc/pacman.d/mirrorlist /mnt/etc/pacman.d/mirrorlist
+#The above used the 'cp' Copy command to coppy our 'mirrorlist' a list of servers close by for downloading at efficient speeds.
 
 sleep 1
 echo "Generation of our 'fstab' file:"
 genfstab -U /mnt >> /mnt/etc/fstab
 #genfstab is a Bash script that is used to automatically detect all mounts under a given mountpoint, its output can then be redirected into a file, usually /etc/fstab.
+#the fstab file contains test like this:
+#PARTION: /dev/sda1    UUID=(Unique Identifier)    /mnt/boot/efi --trim --removable
+#this allows our BIOS to read each partion and their 'link' (pathway to files) on boot without having to re specify those in memory etc.
+
 echo "-- 'fstab' file created!"
 echo "Building our Initial RamDisk:"
 sleep 1
